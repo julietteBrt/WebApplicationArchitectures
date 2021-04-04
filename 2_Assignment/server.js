@@ -37,10 +37,13 @@ io.on('connect', (socket) => {
   })
 })
 
+// post endpoint to save images both in a folder and database
 app.post('/save', (req, res) => {
   //console.log(req.body);
   var savePath = `public/images/${req.body.date}.png`;
   var base64URL = req.body.path.replace('data:image/png;base64,', '');
+  
+  // write a file with base64 encoding to our images folder
   fs.writeFile(savePath, base64URL, 'base64', (err) => {
     if (err) throw err;
   })
@@ -54,6 +57,7 @@ app.post('/save', (req, res) => {
   res.status(200);
 })
 
+// async function to get all elements of our images collection on mongodb
 const queryImages = async() => {
   const result = []
   const cursor = await db.collection('images').find({}).toArray()
@@ -64,6 +68,7 @@ const queryImages = async() => {
   return result
 }
 
+// endpoint to display all images from database
 app.get('/images', async (req, res) => {
     res.send({images: await queryImages()})
 })
