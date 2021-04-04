@@ -10,4 +10,4 @@ Assignment 3 can be accessed on this [link](https://web-app-assignement3.herokua
 
 # Credits
 
-Assignements 1 and 2 use [Tnemelc](https://github.com/Tnemlec) [whiteboard](https://github.com/Tnemlec/Whiteboard).
+Assignments 1 and 2 use [Tnemelc](https://github.com/Tnemlec) [whiteboard](https://github.com/Tnemlec/Whiteboard).
