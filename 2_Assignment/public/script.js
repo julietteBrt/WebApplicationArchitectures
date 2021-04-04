@@ -290,12 +290,7 @@ function SaveToPng(){
     saveToFolder(dataURL);
 }
   
+// open list of images in a new tab
 function showImages(){
     var win = window.open(url + 'images');
-    //win.document.write(res); 
-    /*fetch(url + 'images').then(function(res) {
-        console.log(res);
-        //var win = window.open();
-        //win.document.write(res); 
-    });*/
 }
