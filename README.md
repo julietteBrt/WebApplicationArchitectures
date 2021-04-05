@@ -2,7 +2,7 @@
 Repos for assignements subissions for WAA course - ESILV 
 
 ## Assignment 1
-Assignment 1 can be accessed on this [link](https://whispering-headland-61110.herokuapp.com/).
+Assignment 1 can be accessed on this [link](https://web-app-assignment1.herokuapp.com/).
 ## Assignment 2
 
 ## Assignment 3
