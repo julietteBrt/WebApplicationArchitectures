@@ -11,7 +11,7 @@ const  MongoClient = require("mongodb").MongoClient;
 const client = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING);
 
 client.connect().then(client => {
-  db = client.db();
+  db = client.db('myFirstDatabase');
 }).catch(err => {
   console.log(err);
 });
@@ -65,12 +65,13 @@ const queryImages = async() => {
   for(const img of cursor){
       result.push(img);
   }
-  return result
+  return result;
 }
 
 // endpoint to display all images from database
-app.get('/images', async (req, res) => {
-    res.send({images: await queryImages()})
+app.post('/images', async (req, res) => {
+    //console.log({images: await queryImages()});
+    res.send({images: await queryImages()});
 })
 
 http.listen(port, () => {

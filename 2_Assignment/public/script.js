@@ -1,7 +1,6 @@
 const canvas = document.getElementById('canvas')
-const url = 'http://localhost:5000/'
-// initiating 2D context on it
 const c = canvas.getContext('2d')
+const url = 'http://localhost:5000/'
 
 var socket = io();
 
@@ -32,7 +31,7 @@ function isUserRegistered(){
     return username != ''
 }
 
-//EVENT
+// EVENTS
 
 addEventListener('load', () => {
     canvas.width = innerWidth
@@ -89,7 +88,6 @@ window.addEventListener('mouseup', e => {
 
 document.getElementById("save").addEventListener("click", SaveToPng);
 document.getElementById("show").addEventListener("click", showImages);
-
 
 document.getElementById("username_field").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
@@ -290,7 +288,35 @@ function SaveToPng(){
     saveToFolder(dataURL);
 }
   
-// open list of images in a new tab
-function showImages(){
-    var win = window.open(url + 'images');
+// Get Images from server
+async function getImages(){
+    return fetch(url + 'images', {
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        method: 'POST'
+    }).then(function(res) {
+        //console.log(res.json);
+        return res.json();
+    }).then(function(results){
+        //console.log(results.images);
+        return (results.images);
+    });
+}
+
+async function showImages(){
+    images = await getImages();
+    //console.log(await (getImages()));
+    var win = window.open();
+    
+    win.document.body.innerHTML = "<div id='allImages'> <h1 style='font-family: Arial, Helvetica, sans-serif;'> Images Stored: </h1> </>";
+    allImages = win.document.getElementById("allImages");
+    //console.log(images[0].path);
+
+    for (let i = 0; i < images.length; i++) {
+        let image = "<p style='font-family: Arial, Helvetica, sans-serif;'> Drawn by: " + images[i].user + "</p>" +
+        "<a href='" + images[i].path + "' style='font-family: Arial, Helvetica, sans-serif;'>Link to open image</a>" +
+        "<p style='font-family: Arial, Helvetica, sans-serif;'> Image : </p>" + "<img src='"+ images[i].path + "'/> ";
+        allImages.insertAdjacentHTML('beforeEnd', image);
+    }
 }
