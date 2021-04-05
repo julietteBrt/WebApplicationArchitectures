@@ -3,6 +3,10 @@
 This assignment adds features to the multiusers canvas. One can now save images to a server and in a folder in order to display them.
 It is linked to a [mongodb](https://www.mongodb.com/cloud/atlas) database to store the different images created.
 
+# Web Link
+
+You can access the web app [here](https://web-app-assignment2.herokuapp.com/).
+
 # Local Installation
 
 * Clone this repository and `cd` into it:
