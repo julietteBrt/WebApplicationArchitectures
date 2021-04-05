@@ -12,6 +12,7 @@ You can access the web app [here](https://web-app-assignment2.herokuapp.com/).
 * Clone this repository and `cd` into it:
 ```
 $ git clone https://github.com/julietteBrt/WebApplicationArchitectures
+$ cd WebApplicationArchitectures
 $ cd 2_Assignment
 ```
 * Install the requirements
