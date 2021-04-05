@@ -1,7 +1,30 @@
-# Whiteboard
+# Assignment 2: Node.js + static html + client-side js.
 
-Before executing server.js, you must write the following command in your terminal:
+This assignment adds features to the multiusers canvas. One can now save images to a server and in a folder in order to display them.
+It is linked to a [mongodb](https://www.mongodb.com/cloud/atlas) database to store the different images created.
 
-    npm install
+# Local Installation
 
-so that it will download all the node_modules
+* Clone this repository and `cd` into it:
+```
+$ git clone https://github.com/julietteBrt/WebApplicationArchitectures
+$ cd 2_Assignment
+```
+* Install the requirements
+```bash
+$ npm install
+```
+
+* Create a .env file containing your MONGO_DB_CONNECTION_STRING in the same directory.
+
+# Run the app
+
+```bash
+$ nodemon start
+```
+
+You should be able to access our app on [http://localhost:5000/](http://localhost:5000/)
+
+# Credits
+
+Assignments 1 and 2 use [Tnemelc](https://github.com/Tnemlec) [whiteboard](https://github.com/Tnemlec/Whiteboard).
